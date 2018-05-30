@@ -5,8 +5,9 @@ import styles from './App.scss';
 import Link from 'redux-first-router-link';
 import { NOT_FOUND } from 'redux-first-router';
 import {
-  ROUTE_HOME,
-  ROUTE_DEMO,
+  ROUTE_POST_LIST,
+  ROUTE_POST_EDIT,
+  ROUTE_POST_CREATE,
 } from 'redux/routesMap';
 import {
   Menu,
@@ -15,8 +16,9 @@ import {
 
 
 const actionToComponentPath = {
-  [ ROUTE_HOME ]: 'Home/Home',
-  [ ROUTE_DEMO ]: 'Demo/Demo',
+  [ ROUTE_POST_LIST ]: 'PostList/PostList',
+  [ ROUTE_POST_EDIT ]: 'PostEdit/PostEdit',
+  [ ROUTE_POST_CREATE ]: 'PostEdit/PostEdit',
   [ NOT_FOUND ]: 'NotFound/NotFound',
 };
 
@@ -69,16 +71,8 @@ class App extends Component {
         >
           <Container>
             <Menu.Item as={Link} to="/" header>
-              React Web Boilerplate
+              CRUD App
             </Menu.Item>
-            <Menu.Menu position="right">
-              <Menu.Item as={Link} to="/">
-                Home
-              </Menu.Item>
-              <Menu.Item as={Link} to="/demo">
-                Demo
-              </Menu.Item>
-            </Menu.Menu>
           </Container>
         </Menu>
         <Container text className={ styles.app__container }>

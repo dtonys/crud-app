@@ -4,8 +4,14 @@ import configureStore from 'redux/configureStore';
 import { Provider as ReduxStoreProvider } from 'react-redux';
 
 
-export function wrapWithReduxProvider( Component, initialState = {}) { // eslint-disable-line
-  const history = createMemoryHistory({ initialEntries: [ '/' ] });
+export function delay( ms ) {
+  return new Promise((resolve /* , reject */) => {
+    setTimeout(resolve, ms);
+  });
+}
+
+export function wrapWithReduxProvider( Component, initialState = {}, initialUrl = '/') { // eslint-disable-line
+  const history = createMemoryHistory({ initialEntries: [ initialUrl ] });
   const store = configureStore( initialState, history );
 
   return (

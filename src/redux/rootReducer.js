@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import demoReducer, { STORE_KEY as DEMO_STORE_KEY } from 'redux/demo/reducer';
+import postsReducer, { STORE_KEY as POST_STORE_KEY } from 'redux/posts/reducer';
 
 
 export default ( routeReducer ) => {
   return combineReducers({
-    [DEMO_STORE_KEY]: demoReducer,
+    [POST_STORE_KEY]: postsReducer,
     location: routeReducer,
   });
 };
